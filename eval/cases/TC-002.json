@@ -1,0 +1,28 @@
+{
+  "id": "TC-002",
+  "description": "Bug: iOS crash when opening guild warehouse after v4.2.1 update",
+  "tags": ["bug", "en", "medium", "ios", "regression"],
+  "input": {
+    "ticket_id": "TC-002",
+    "user_name": "GuildMaster99",
+    "ticket_text": "The game crashes every time I try to open the guild warehouse on iOS 17.3. Started happening after the v4.2.1 update yesterday. Tried reinstalling but no luck. iPhone 14 Pro."
+  },
+  "expected": {
+    "classifier.type": "bug",
+    "classifier.language": "en",
+    "classifier.urgency": ["medium", "high"],
+    "classifier.pii_detected": false,
+    "classifier.sensitive_topic": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.subject": { "max_length": 120 },
+    "generator.user_reply.body.max_length": 2000,
+    "generator.team_summary.tags.contains": ["bug", "ios"],
+    "generator.team_summary.bullets.min_length": 2,
+    "generator.action_items.min_length": 2,
+    "qa.checks.guardrails": "pass",
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Reply should acknowledge regression post-update. Action items must include QA reproduction and crash log pull."
+}

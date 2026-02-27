@@ -1,0 +1,23 @@
+{
+  "id": "TC-010",
+  "description": "Internal: cross-team request for content localization timeline — formal reply",
+  "tags": ["internal", "en", "medium", "localization", "cross-team"],
+  "input": {
+    "ticket_id": "TC-010",
+    "user_name": "LocalizationLead",
+    "ticket_text": "Hi, I'm from the localization team. We need to understand the content delivery schedule for Q2 so we can plan our translation pipeline. Could you provide a breakdown of planned content releases for April-June? We need at least 3 weeks lead time per batch."
+  },
+  "expected": {
+    "classifier.type": "internal",
+    "classifier.language": "en",
+    "classifier.urgency": ["medium", "low"],
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.max_length": 2000,
+    "generator.action_items.min_length": 1,
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Internal ticket — tone should be professional/collegial, not customer-support style. Reply must not invent Q2 schedule details."
+}

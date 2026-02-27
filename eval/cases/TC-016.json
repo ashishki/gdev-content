@@ -1,0 +1,26 @@
+{
+  "id": "TC-016",
+  "description": "Abuse: in-game scam/phishing reported by player — Trust & Safety routing",
+  "tags": ["abuse", "en", "high", "scam", "phishing", "trust-safety"],
+  "input": {
+    "ticket_id": "TC-016",
+    "user_name": "ScamVictim",
+    "ticket_text": "Someone in global chat is posting links saying 'FREE GEMS click here' and sending private messages asking for account credentials. I think it's a phishing scam. Username is ProGamer2024. I did NOT click the link but others might have. Please investigate!"
+  },
+  "expected": {
+    "classifier.type": "abuse",
+    "classifier.language": "en",
+    "classifier.urgency": ["high", "medium"],
+    "classifier.pii_detected": false,
+    "classifier.sensitive_topic": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.max_length": 2000,
+    "generator.team_summary.tags.contains": ["abuse", "phishing"],
+    "generator.action_items.min_length": 2,
+    "qa.checks.guardrails": "pass",
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Scam report — not a threat, normal pipeline. Reply should thank reporter and assure investigation. Trust & Safety action item required. Do not confirm investigation outcome."
+}

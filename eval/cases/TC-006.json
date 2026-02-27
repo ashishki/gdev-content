@@ -1,0 +1,25 @@
+{
+  "id": "TC-006",
+  "description": "Feature request: player asks for new hero/character class — English, low urgency",
+  "tags": ["feature_request", "en", "low", "game-content"],
+  "input": {
+    "ticket_id": "TC-006",
+    "user_name": "FantasyFan",
+    "ticket_text": "Hi! I've been playing for 2 years and absolutely love the game. It would be amazing if you could add a Necromancer class to the roster. Many players in my guild have been asking for this too. Any chance we could see something like that?"
+  },
+  "expected": {
+    "classifier.type": "feature_request",
+    "classifier.language": "en",
+    "classifier.urgency": ["low", "medium"],
+    "classifier.pii_detected": false,
+    "classifier.sensitive_topic": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.max_length": 2000,
+    "generator.user_reply.body.contains_commitment": false,
+    "generator.action_items.min_length": 1,
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Reply must be encouraging and warm, but must NOT promise feature will be added. Route to product team as feedback."
+}

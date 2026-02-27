@@ -1,0 +1,27 @@
+{
+  "id": "TC-003",
+  "description": "Abuse: cheat report with no PII — normal flow, skip_user_reply=false",
+  "tags": ["abuse", "en", "high", "cheat-report", "anti-cheat"],
+  "input": {
+    "ticket_id": "TC-003",
+    "user_name": "Reporter",
+    "ticket_text": "Player 'xX_H4x0r_Xx' in server EU-5 is clearly using aimbots and wall hacks in ranked matches. I have screenshots. His stats are inhuman: 47 KD ratio this season. Please ban him."
+  },
+  "expected": {
+    "classifier.type": "abuse",
+    "classifier.language": "en",
+    "classifier.urgency": ["high", "medium"],
+    "classifier.pii_detected": false,
+    "classifier.sensitive_topic": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.max_length": 2000,
+    "generator.user_reply.body.contains_ban_confirmation": false,
+    "generator.team_summary.tags.contains": ["abuse", "anti-cheat"],
+    "generator.action_items.min_length": 2,
+    "qa.checks.guardrails": "pass",
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Normal cheat report without threats or PII — full pipeline runs. Reply must NOT confirm ban decision. Trust & Safety action item required."
+}

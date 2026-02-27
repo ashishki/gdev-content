@@ -1,0 +1,20 @@
+{
+  "id": "TC-008",
+  "description": "Abuse: ticket contains explicit threats and profanity — hard stop, error_flag=true, escalate",
+  "tags": ["abuse", "ru", "critical", "threats", "hard-stop"],
+  "input": {
+    "ticket_id": "TC-008",
+    "user_name": "User",
+    "ticket_text": "Вы все [нецензурная лексика]! Если не вернёте мои деньги, я взломаю ваш сервер и выложу всё в сеть! Вы ответите за это! Я знаю где вы находитесь!"
+  },
+  "expected": {
+    "classifier.type": "abuse",
+    "classifier.language": "ru",
+    "classifier.urgency": "critical",
+    "classifier.sensitive_topic": true,
+    "generator.error_flag": true,
+    "pipeline.auto_reply_blocked": true,
+    "pipeline.escalated_to_human": true
+  },
+  "notes": "HARD STOP: threats + profanity. Pipeline must NOT auto-send any user reply. Immediately escalate to Trust & Safety. Log for legal if needed."
+}

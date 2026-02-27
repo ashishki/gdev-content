@@ -1,0 +1,24 @@
+{
+  "id": "TC-013",
+  "description": "Bug: server outage, mass player complaints — critical urgency, P1 actions required",
+  "tags": ["bug", "en", "critical", "server-outage", "mass-incident"],
+  "input": {
+    "ticket_id": "TC-013",
+    "user_name": "ConcernedPlayer",
+    "ticket_text": "Your servers are completely down! I can't connect to ANY game. My clan is saying the same — we all dropped from a ranked match that was in progress. We're losing our ranked points for this! This has been going on for 40 minutes already. Is anyone even working on this?!"
+  },
+  "expected": {
+    "classifier.type": "bug",
+    "classifier.language": "en",
+    "classifier.urgency": "critical",
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.action_items.priority_p1_count.min": 1,
+    "generator.action_items.min_length": 3,
+    "qa.checks.tone": "pass",
+    "qa.checks.completeness": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Critical incident — at least 1 P1 action item (escalate to SRE/ops). Reply must acknowledge the incident urgency without making promises about ETA or compensation."
+}

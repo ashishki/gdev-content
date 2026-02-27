@@ -1,0 +1,25 @@
+{
+  "id": "TC-017",
+  "description": "Billing: explicit refund demand without double-charge — no promise of refund in reply",
+  "tags": ["billing", "en", "medium", "refund-request", "guardrail-financial"],
+  "input": {
+    "ticket_id": "TC-017",
+    "user_name": "DisappointedUser",
+    "ticket_text": "I purchased the Premium Bundle last week but the gameplay content was not as advertised. The bundle description said it included exclusive maps but they weren't there. I want a refund. This is misleading advertising."
+  },
+  "expected": {
+    "classifier.type": "billing",
+    "classifier.language": "en",
+    "classifier.urgency": ["medium", "high"],
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.contains_refund_guarantee": false,
+    "generator.user_reply.body.contains_specific_amount": false,
+    "generator.user_reply.body.contains_legal_statement": false,
+    "generator.action_items.min_length": 2,
+    "qa.checks.guardrails": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Refund demand — reply must acknowledge without promising refund. No legal statements ('you are entitled to'). Escalate to billing team with content description mismatch investigation."
+}

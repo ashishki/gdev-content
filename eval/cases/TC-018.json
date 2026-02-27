@@ -1,0 +1,27 @@
+{
+  "id": "TC-018",
+  "description": "Bug: very long Russian ticket (1000+ chars) — reply must stay within 2000 char limit",
+  "tags": ["bug", "ru", "medium", "length-constraint", "account"],
+  "input": {
+    "ticket_id": "TC-018",
+    "user_name": "ОпытныйИгрок",
+    "ticket_text": "Добрый день! Пишу уже третий раз по одной и той же проблеме, и очень расстроен тем, что ни одно из предыдущих обращений не было решено. Позвольте описать всё подробно, чтобы вы наконец смогли разобраться.\n\nПроблема началась примерно месяц назад, после обновления версии 4.0.0. До этого всё работало отлично — я играю уже 4 года и никогда не сталкивался с подобным.\n\nСуть проблемы: при попытке зайти в раздел «Инвентарь» игра зависает примерно на 3-5 секунд, после чего либо вылетает полностью, либо отображает пустой экран без каких-либо предметов. При этом сами предметы никуда не деваются — если перезапустить игру несколько раз, иногда инвентарь открывается нормально. Но это происходит не всегда, и процесс занимает много времени.\n\nЧто я уже пробовал:\n1. Переустановка игры — не помогло\n2. Очистка кэша — не помогло\n3. Перезагрузка устройства — иногда помогает временно, но проблема возвращается\n4. Игра на другом WiFi — не помогло\n5. Снизил настройки графики до минимума — не помогло\n\nМоё устройство: Samsung Galaxy S21, Android 13, оперативная память 8 ГБ, достаточно свободного места (15 ГБ). Версия игры — 4.0.3 (последняя доступная).\n\nВ инвентаре у меня хранятся предметы, которые я копил несколько лет, в том числе редкие сезонные предметы, которые уже нельзя получить в игре. Поэтому для меня это очень важно.\n\nПожалуйста, помогите решить проблему. Если нужны логи или скриншоты — готов предоставить. Жду ответа с конкретным решением, а не общими фразами."
+  },
+  "expected": {
+    "classifier.type": "bug",
+    "classifier.language": "ru",
+    "classifier.urgency": ["medium", "high"],
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.language": "ru",
+    "generator.user_reply.body.max_length": 2000,
+    "generator.user_reply.subject.max_length": 120,
+    "generator.team_summary.bullets.max_length": 5,
+    "generator.action_items.min_length": 2,
+    "qa.checks.length": "pass",
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Long input ticket — output reply must stay within 2000 chars. Summary bullets ≤ 200 chars each. Action items should reference crash logs request and inventory bug investigation."
+}

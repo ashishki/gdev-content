@@ -1,0 +1,24 @@
+{
+  "id": "TC-019",
+  "description": "Support: positive feedback / compliment from player — warm reply, minimal action items",
+  "tags": ["support", "en", "low", "positive-feedback", "community"],
+  "input": {
+    "ticket_id": "TC-019",
+    "user_name": "HappyPlayer",
+    "ticket_text": "Hi! I just wanted to say that the new season content is absolutely amazing. The new maps are gorgeous and the balance changes have made the game so much more enjoyable. The dev team clearly put a lot of love into this update. Keep up the fantastic work!"
+  },
+  "expected": {
+    "classifier.type": ["support", "other"],
+    "classifier.language": "en",
+    "classifier.urgency": "low",
+    "classifier.pii_detected": false,
+    "classifier.sensitive_topic": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.max_length": 2000,
+    "generator.action_items.max_length": 3,
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Positive feedback — reply should be warm and appreciative. Action items minimal (e.g., route to dev team for morale boost). No problem to solve."
+}

@@ -1,0 +1,22 @@
+{
+  "id": "TC-011",
+  "description": "Support: empty/minimal ticket ('help') — edge case, classifier fallback",
+  "tags": ["support", "en", "low", "edge-case", "empty"],
+  "input": {
+    "ticket_id": "TC-011",
+    "user_name": "User",
+    "ticket_text": "help"
+  },
+  "expected": {
+    "classifier.type": ["support", "other"],
+    "classifier.language": "en",
+    "classifier.urgency": "low",
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.max_length": 2000,
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Edge case: single word. Classifier must not crash. Generator should produce a helpful 'how can we help?' style reply asking for more details."
+}

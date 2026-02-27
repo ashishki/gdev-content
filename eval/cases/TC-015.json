@@ -1,0 +1,25 @@
+{
+  "id": "TC-015",
+  "description": "Feature request: add a specific character to the game — Russian, encouraging reply without commitment",
+  "tags": ["feature_request", "ru", "low", "game-content", "character"],
+  "input": {
+    "ticket_id": "TC-015",
+    "user_name": "ФанатИгры",
+    "ticket_text": "Привет! Играю уже 3 года и очень люблю игру. Можете добавить нового персонажа — лучника-ельфийку? Такого нет в игре, но многие в нашем клане хотели бы. Было бы здорово!"
+  },
+  "expected": {
+    "classifier.type": "feature_request",
+    "classifier.language": "ru",
+    "classifier.urgency": "low",
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.language": "ru",
+    "generator.user_reply.body.max_length": 2000,
+    "generator.user_reply.body.contains_commitment": false,
+    "generator.action_items.min_length": 1,
+    "qa.checks.tone": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Reply in Russian, warm and encouraging. Must NOT promise feature will be added. Route to product team as community feedback."
+}

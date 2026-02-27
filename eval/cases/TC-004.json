@@ -1,0 +1,26 @@
+{
+  "id": "TC-004",
+  "description": "Support: how to change username — Russian, low urgency, FAQ-style reply",
+  "tags": ["support", "ru", "low", "faq", "account"],
+  "input": {
+    "ticket_id": "TC-004",
+    "user_name": "НовыйИгрок",
+    "ticket_text": "Привет! Подскажите, как поменять никнейм в игре? Нигде не нашёл эту опцию."
+  },
+  "expected": {
+    "classifier.type": "support",
+    "classifier.language": "ru",
+    "classifier.urgency": ["low", "medium"],
+    "classifier.pii_detected": false,
+    "classifier.sensitive_topic": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.language": "ru",
+    "generator.user_reply.body.max_length": 2000,
+    "generator.action_items.min_length": 1,
+    "qa.checks.tone": "pass",
+    "qa.checks.language": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Simple FAQ-type question. Reply in Russian, friendly tone. Action items can be minimal (e.g., add to FAQ)."
+}

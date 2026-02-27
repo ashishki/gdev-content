@@ -1,0 +1,24 @@
+{
+  "id": "TC-007",
+  "description": "Support: Turkish-language ticket about account recovery — translation_en required",
+  "tags": ["support", "tr", "medium", "account", "multilingual"],
+  "input": {
+    "ticket_id": "TC-007",
+    "user_name": "TurkishPlayer",
+    "ticket_text": "Merhaba, hesabıma giriş yapamıyorum. Şifremi sıfırlamaya çalıştım ama e-posta gelmiyor. Lütfen yardım edin, çok önemli eşyalarım var hesabımda."
+  },
+  "expected": {
+    "classifier.type": "support",
+    "classifier.language": "tr",
+    "classifier.urgency": ["medium", "high"],
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.language": "tr",
+    "generator.user_reply.translation_en": { "present": true },
+    "generator.action_items.min_length": 2,
+    "qa.checks.language": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Reply in Turkish required. translation_en field must be present. Account recovery steps in action_items."
+}

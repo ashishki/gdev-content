@@ -1,0 +1,25 @@
+{
+  "id": "TC-009",
+  "description": "Bug: Android login loop after latest update — high urgency, 3+ action items required",
+  "tags": ["bug", "en", "high", "android", "login", "regression"],
+  "input": {
+    "ticket_id": "TC-009",
+    "user_name": "AndroidPlayer",
+    "ticket_text": "Every time I try to log in on my Android phone it just keeps looping back to the login screen. I enter my credentials, it loads for a second, then resets. I've cleared cache and data, reinstalled twice. Galaxy S23, Android 14, game version 5.1.0. This started after today's update."
+  },
+  "expected": {
+    "classifier.type": "bug",
+    "classifier.language": "en",
+    "classifier.urgency": ["high", "critical"],
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.max_length": 2000,
+    "generator.action_items.min_length": 3,
+    "generator.action_items.max_length": 10,
+    "generator.team_summary.tags.contains": ["bug", "android"],
+    "qa.checks.completeness": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "At least 3 action items: reproduce, check logs, assess rollback. Device info (Galaxy S23, Android 14) must appear in team_summary."
+}

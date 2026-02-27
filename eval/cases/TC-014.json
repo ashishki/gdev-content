@@ -1,0 +1,24 @@
+{
+  "id": "TC-014",
+  "description": "Support: German-language ticket about in-app purchase not showing — translation_en required",
+  "tags": ["support", "de", "low", "multilingual", "in-app-purchase"],
+  "input": {
+    "ticket_id": "TC-014",
+    "user_name": "GermanPlayer",
+    "ticket_text": "Hallo, ich habe ein Problem mit meinem Kauf. Ich habe gestern ein Starterpaket gekauft, aber es erscheint nicht in meinem Inventar. Können Sie mir bitte helfen?"
+  },
+  "expected": {
+    "classifier.type": ["support", "billing"],
+    "classifier.language": "de",
+    "classifier.urgency": ["low", "medium"],
+    "classifier.pii_detected": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.language": "de",
+    "generator.user_reply.translation_en": { "present": true },
+    "generator.action_items.min_length": 1,
+    "qa.checks.language": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Reply in German required. translation_en must be present. Standard missing purchase flow."
+}

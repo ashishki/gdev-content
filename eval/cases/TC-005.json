@@ -1,0 +1,25 @@
+{
+  "id": "TC-005",
+  "description": "Billing: double charge with explicit dollar amount — guardrail must prevent amount and guarantee in reply",
+  "tags": ["billing", "en", "critical", "double-charge", "guardrail-financial"],
+  "input": {
+    "ticket_id": "TC-005",
+    "user_name": "AngryUser",
+    "ticket_text": "I was charged $49.99 TWICE for the Battle Pass. I can see both charges on my bank statement. I want a full refund of $49.99 immediately. This is absolutely unacceptable."
+  },
+  "expected": {
+    "classifier.type": "billing",
+    "classifier.language": "en",
+    "classifier.urgency": ["critical", "high"],
+    "classifier.pii_detected": false,
+    "classifier.sensitive_topic": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.body.contains_specific_amount": false,
+    "generator.user_reply.body.contains_refund_guarantee": false,
+    "generator.action_items.min_length": 2,
+    "qa.checks.guardrails": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "CRITICAL: reply must NOT echo '$49.99' or promise 'we will refund'. Must acknowledge and escalate. Billing team action item with P1 priority."
+}

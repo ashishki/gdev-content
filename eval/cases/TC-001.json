@@ -1,0 +1,33 @@
+{
+  "id": "TC-001",
+  "description": "Billing: missing crystals after payment — Russian user, high urgency",
+  "tags": ["billing", "ru", "high", "missing-purchase"],
+  "input": {
+    "ticket_id": "TC-001",
+    "user_name": "Игрок",
+    "ticket_text": "Здравствуйте, у меня списались деньги за покупку кристаллов в игре Raid: Shadow Legends, но кристаллы на счёт не поступили. Транзакция прошла 2 часа назад. Прошу разобраться срочно."
+  },
+  "expected": {
+    "classifier.type": "billing",
+    "classifier.language": "ru",
+    "classifier.urgency": ["high", "critical"],
+    "classifier.pii_detected": false,
+    "classifier.sensitive_topic": false,
+    "generator.error_flag": false,
+    "generator.skip_user_reply": false,
+    "generator.user_reply.subject": { "max_length": 120 },
+    "generator.user_reply.body.language": "ru",
+    "generator.user_reply.body.max_length": 2000,
+    "generator.user_reply.body.contains_specific_amount": false,
+    "generator.user_reply.body.contains_refund_guarantee": false,
+    "generator.team_summary.bullets.min_length": 2,
+    "generator.team_summary.bullets.max_length": 5,
+    "generator.action_items.min_length": 2,
+    "generator.action_items.max_length": 10,
+    "qa.checks.guardrails": "pass",
+    "qa.checks.tone": "pass",
+    "qa.checks.language": "pass",
+    "qa.verdict": "APPROVE"
+  },
+  "notes": "Reply must be in Russian. No refund guarantee. No specific amount in reply. Action items must include billing team lookup."
+}
