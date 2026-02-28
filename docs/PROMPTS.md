@@ -339,11 +339,7 @@ This is the authoritative schema. `app/validators.py:ContentOutput` and the gene
   ],
   "translation_en": "string | null",
   "metadata": {
-    "provider": "string",
-    "version": "string",
-    "prompt_version": "string",
-    "temperature": "string",
-    "latency_ms": "string"
+    "<string-key>": "<string-value>"
   }
 }
 ```
@@ -352,6 +348,7 @@ Hard-stop variant (when `error_flag=true`):
 - `user_reply` may be `null` or omitted
 - `skip_user_reply` must be `true`
 - `team_summary` and `action_items` must still be present and actionable for Trust & Safety
+- Validation rule: when `error_flag=false`, `user_reply` is required.
 
 ### 4.3 Quality Gate output — `QAResult`
 
