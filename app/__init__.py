@@ -1,0 +1,2 @@
+"""gdev-content application package."""
+
