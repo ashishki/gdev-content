@@ -4,6 +4,8 @@ A multi-stage LLM pipeline that turns incoming support tickets into three struct
 
 Built as a portfolio project demonstrating production-grade prompt engineering practices: versioned prompts, schema-enforced output, multi-layer guardrails, adversarial eval coverage, and n8n-native webhook integration.
 
+Status: secondary portfolio asset. Maintenance roadmap: `docs/PROJECT_PLAN.md`.
+
 ---
 
 ## What it produces
